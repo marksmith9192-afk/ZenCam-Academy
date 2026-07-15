@@ -20,7 +20,7 @@ export default function TrainingHome() {
         <span className="academy-kicker">Welcome to ZenCam Academy</span>
         <h1>Build confidence.<span>Drive better outcomes.</span></h1>
         <strong className="academy-subhead">Practical training for every part of your fleet operation.</strong>
-        <p>Learn essential ZenduONE workflows through clear, self-paced lessons using real product screens.</p>
+        <p>Learn essential ZenCam workflows through clear, self-paced lessons using real product screens.</p>
       </div>
       <div className="academy-benefits" aria-label="Training benefits">
         <div><strong>Self-paced</strong><span>Learn on your schedule</span></div>
@@ -50,12 +50,25 @@ export default function TrainingHome() {
     </section>
 
     <section className="academy-roadmap">
-      <div className="section-heading"><div><span>More training on the way</span><h2>Expanding across ZenduONE</h2></div><p>New lessons will be added as each product workflow is captured and reviewed.</p></div>
+      <div className="section-heading"><div><span>More training on the way</span><h2>Expanding across ZenCam</h2></div></div>
       <div className="roadmap-grid">{upcomingModules.map((module) => <article className="roadmap-card" key={module.title}>
         <div><span>In development</span><h3>{module.title}</h3></div>
         <p>{module.description}</p>
         <ul>{module.lessons.map((lesson) => <li key={lesson}>{lesson}</li>)}</ul>
       </article>)}</div>
+    </section>
+
+    <section className="support-cta">
+      <div>
+        <span>Traxxis customer support</span>
+        <h2>Have a question or want more in-depth training?</h2>
+        <p>Our fleet technology specialists can help with product questions, tailored training, and guidance for your team.</p>
+      </div>
+      <div className="support-actions">
+        <a className="support-primary" href="mailto:support@traxxisgps.com?subject=ZenCam%20training%20request">Email Traxxis Support</a>
+        <a href="tel:+18884477059">Call 1-888-447-7059 ext. 101</a>
+        <small>Monday–Friday, 8 a.m.–6 p.m. ET</small>
+      </div>
     </section>
   </TrainingShell>;
 }

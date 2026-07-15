@@ -23,18 +23,19 @@ async function render(pathname = "/") {
   );
 }
 
-test("server-renders the ZenduONE Academy curriculum", async () => {
+test("server-renders the ZenCam Academy curriculum", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>ZenduONE Academy<\/title>/i);
-  assert.match(html, /Learn the work/);
+  assert.match(html, /<title>ZenCam Academy<\/title>/i);
+  assert.match(html, /Build confidence/);
+  assert.match(html, /Traxxis customer support/);
   assert.match(html, /View vehicle trips/);
-  assert.match(html, /Review exceptions from trips/);
-  assert.match(html, /Find vehicle activity with Proximity Search/);
-  assert.match(html, /Create locations and zones/);
+  assert.match(html, /Request video from a trip/);
+  assert.match(html, /Expanding across ZenCam/);
+  assert.doesNotMatch(html, /<h3>Work<\/h3>/);
 });
 
 test("keeps real-screen workflows and Pages publishing configured", async () => {

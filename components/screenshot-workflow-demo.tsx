@@ -69,7 +69,7 @@ const workflows: Record<DemoVariant, RecordedWorkflow> = {
     title: "Create locations and zones",
     subtitle: "Use the real Locations workspace to create a named place and the geofence that defines its zone.",
     steps: [
-      { image: "/demo-screens/maps/manage-locations/01-locations-list.png", label: "Open locations", title: "Review saved locations", body: "Locations are named places such as offices, yards, customer sites, or homes. Their zones let ZenduONE recognize activity inside a defined area.", hotspot: { x: 7, y: 22, width: 91, height: 61 } },
+      { image: "/demo-screens/maps/manage-locations/01-locations-list.png", label: "Open locations", title: "Review saved locations", body: "Locations are named places such as offices, yards, customer sites, or homes. Their zones let ZenCam recognize activity inside a defined area.", hotspot: { x: 7, y: 22, width: 91, height: 61 } },
       { image: "/demo-screens/maps/manage-locations/02-create-zone-circle.png", label: "Create a location", title: "Enter the location details", body: "Choose Create Location, then enter the name, group, tag, address, contact information, business hours, and stop duration.", hotspot: { x: 5, y: 12, width: 43, height: 80 } },
       { image: "/demo-screens/maps/manage-locations/02-create-zone-circle.png", label: "Define the zone", title: "Set a circular geofence", body: "A geofence is the zone boundary around the location. Choose Circle, then set its color, opacity, and radius on the map.", hotspot: { x: 64, y: 63, width: 34, height: 29 } },
       { image: "/demo-screens/maps/manage-locations/03-zone-polygon.png", label: "Shape the zone", title: "Use a polygon for an exact boundary", body: "Choose Polygon when the location needs a custom boundary, then place points around the area before saving.", hotspot: { x: 64, y: 63, width: 34, height: 29 } },
@@ -261,8 +261,8 @@ export function ScreenshotWorkflowDemo({ variant }: { variant: DemoVariant }) {
 
   return <section className="workflow-demo-wrap screenshot-workflow">
     <div className="workflow-demo-intro"><div><span>Guided product lesson</span><h2>{workflow.title}</h2><p>{workflow.subtitle}</p></div><div><button onClick={() => start("guided")}>Try it yourself →</button><button onClick={() => start("watch")}>▶ Watch lesson</button></div></div>
-    <div className="workflow-demo-shell"><div className="workflow-browser"><i/><i/><i/><span>academy.zendu.one/{variant}</span><b>PRACTICE</b></div><div className="screenshot-stage">
-      <img src={assetPath(current.image)} alt={`ZenduONE product screen — ${current.title}`} />
+    <div className="workflow-demo-shell"><div className="workflow-browser"><i/><i/><i/><span>academy.zencam.com/{variant}</span><b>PRACTICE</b></div><div className="screenshot-stage">
+      <img src={assetPath(current.image)} alt={`ZenCam product screen — ${current.title}`} />
       {running && current.hotspot && <button className="screenshot-hotspot" aria-label={`${current.title}. Select highlighted area.`} onClick={advance} style={{ left: `${current.hotspot.x}%`, top: `${current.hotspot.y}%`, width: `${current.hotspot.width}%`, height: `${current.hotspot.height}%` }} />}
       {running && <>{!current.hotspot && <div className="screenshot-complete-mark">✓</div>}<button className="simple-exit screenshot-exit" onClick={exit}>× Exit guide</button><aside className={`simple-tour-card screenshot-tour-card ${placement.side}`} style={placement.style}><div><span>{step + 1}</span><strong>{current.label}</strong></div><h3>{current.title}</h3><p>{current.body}</p><footer><button disabled={step === 0} onClick={() => setStep((value) => Math.max(0, value - 1))}>← Back</button><span>{step + 1} / {workflow.steps.length}</span>{step === workflow.steps.length - 1 ? <button className="next" onClick={exit}>Finish</button> : <button className="next" onClick={advance}>Next →</button>}</footer></aside></>}
     </div></div>

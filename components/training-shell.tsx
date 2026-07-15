@@ -5,14 +5,10 @@ import { sections, type SectionSlug } from "../lib/training-catalog";
 export function TrainingShell({ children, activeSection }: { children: React.ReactNode; activeSection?: SectionSlug }) {
   return (
     <div className="training-app">
-      <header className="training-header">
-        <Link href="/" className="training-brand"><span>Z</span><strong>ZenCam Academy</strong></Link>
-        <div className="training-header-meta"><span>Customer training</span><div className="learner-avatar">MS</div></div>
-      </header>
       <aside className="training-nav" aria-label="Training sections">
         <Link href="/" className={!activeSection ? "training-nav-home active" : "training-nav-home"}>
           <img className="training-home-logo" src={assetPath("/traxxis-t-logo.png")} alt="" />
-          <span>Training home</span>
+          <span>Training Home</span>
         </Link>
         <p>Learn by area</p>
         {sections.map((section) => (

@@ -11,10 +11,10 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(origin),
     title: "ZenCam Academy",
-    description: "Self-paced ZenduONE training for confident, capable fleet teams.",
+    description: "Self-paced ZenCam training for confident, capable fleet teams.",
     icons: { icon: assetPath("/favicon.svg"), shortcut: assetPath("/favicon.svg") },
-    openGraph: { title: "ZenCam Academy", description: "Practical ZenduONE training for every part of your fleet operation.", images: [{ url: assetPath("/og.png"), width: 1536, height: 1024 }] },
-    twitter: { card: "summary_large_image", title: "ZenCam Academy", description: "Practical ZenduONE training for every part of your fleet operation.", images: [assetPath("/og.png")] },
+    openGraph: { title: "ZenCam Academy", description: "Practical ZenCam training for every part of your fleet operation.", images: [{ url: assetPath("/og.png"), width: 1536, height: 1024 }] },
+    twitter: { card: "summary_large_image", title: "ZenCam Academy", description: "Practical ZenCam training for every part of your fleet operation.", images: [assetPath("/og.png")] },
   };
 }
 
