@@ -27,6 +27,21 @@ export type TrainingSection = {
   lessons: Lesson[];
 };
 
+export type UpcomingModule = {
+  title: string;
+  description: string;
+  lessons: string[];
+};
+
+export const upcomingModules: UpcomingModule[] = [
+  { title: "Work", description: "Plan field work and keep jobs moving from assignment through completion.", lessons: ["Create and assign a job", "Manage orders", "Track work progress"] },
+  { title: "Forms", description: "Build repeatable digital processes for drivers and field teams.", lessons: ["Create a form template", "Send a task", "Review submissions and approvals"] },
+  { title: "Maintenance", description: "Stay ahead of service needs, inspections, issues, and work orders.", lessons: ["Set a maintenance schedule", "Review inspections and issues", "Create a work order", "Manage parts"] },
+  { title: "Hours of Service", description: "Monitor driver availability and review compliant safety logs.", lessons: ["Review the HOS summary", "Review and certify safety logs"] },
+  { title: "Products & inventory", description: "Organize products, stock levels, tags, locations, and identifiers.", lessons: ["Create a product", "Track inventory by location", "Use product tags and identifiers"] },
+  { title: "Administration setup", description: "Complete the settings that support your organization and connected workflows.", lessons: ["Configure organization details", "Manage tags and custom fields", "Configure video and coaching settings", "Connect applications", "Review the audit log"] },
+];
+
 export const sections: TrainingSection[] = [
   {
     slug: "maps",

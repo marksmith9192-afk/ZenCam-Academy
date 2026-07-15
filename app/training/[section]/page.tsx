@@ -12,7 +12,13 @@ export default async function SectionPage({ params }: { params: Promise<{ sectio
   if (!section) notFound();
   const available = section.lessons.filter((lesson) => lesson.status === "available").length;
   return <TrainingShell activeSection={section.slug}>
-    <section className={`section-hero ${section.color}`}><span className="section-hero-icon"><img src={assetPath(section.icon)} alt="" /></span><div><span>ZenduONE Academy / {section.title}</span><h1>{section.title} training</h1><p>{section.description}</p><small>{available} available · {section.lessons.length - available} planned</small></div></section>
-    <section className="curriculum"><div className="section-heading"><div><span>Curriculum</span><h2>Choose a workflow</h2></div><p>Lessons are designed to take less than ten minutes.</p></div><div className="lesson-grid">{section.lessons.map((lesson) => <LessonCard key={lesson.slug} section={section.slug} lesson={lesson} />)}</div></section>
+    <section className={`section-hero ${section.color}`}>
+      <span className="section-hero-icon"><img src={assetPath(section.icon)} alt="" /></span>
+      <div><span>ZenCam Academy / {section.title}</span><h1>{section.title} training</h1><p>{section.description}</p><small>{available} {available === 1 ? "lesson" : "lessons"}</small></div>
+    </section>
+    <section className="curriculum">
+      <div className="section-heading"><div><span>{section.title} module</span><h2>Choose a lesson</h2></div><p>Each lesson focuses on a task you’ll perform in ZenduONE.</p></div>
+      <div className="lesson-grid">{section.lessons.map((lesson) => <LessonCard key={lesson.slug} section={section.slug} lesson={lesson} />)}</div>
+    </section>
   </TrainingShell>;
 }
