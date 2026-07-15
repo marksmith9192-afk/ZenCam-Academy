@@ -2,14 +2,28 @@ import Link from "next/link";
 import { assetPath } from "../lib/asset-path";
 import { sections, type SectionSlug } from "../lib/training-catalog";
 
-export function TrainingShell({ children, activeSection }: { children: React.ReactNode; activeSection?: SectionSlug }) {
+type ResourceSlug = "how-it-works" | "camera-health";
+
+const resources: Array<{ slug: ResourceSlug; title: string; icon: string }> = [
+  { slug: "how-it-works", title: "How It Works", icon: "▶" },
+  { slug: "camera-health", title: "Camera Health", icon: "✓" },
+];
+
+export function TrainingShell({ children, activeSection, activeResource }: { children: React.ReactNode; activeSection?: SectionSlug; activeResource?: ResourceSlug }) {
   return (
     <div className="training-app">
       <aside className="training-nav" aria-label="Training sections">
-        <Link href="/" className={!activeSection ? "training-nav-home active" : "training-nav-home"}>
+        <Link href="/" className={!activeSection && !activeResource ? "training-nav-home active" : "training-nav-home"}>
           <img className="training-home-logo" src={assetPath("/traxxis-t-logo.png")} alt="" />
           <span>Training Home</span>
         </Link>
+        <p>Camera essentials</p>
+        {resources.map((resource) => (
+          <Link key={resource.slug} href={`/training/${resource.slug}`} className={activeResource === resource.slug ? "active" : ""}>
+            <span className="nav-icon resource">{resource.icon}</span>
+            <span>{resource.title}</span>
+          </Link>
+        ))}
         <p>Learn by area</p>
         {sections.map((section) => (
           <Link key={section.slug} href={`/training/${section.slug}`} className={activeSection === section.slug ? "active" : ""}>
