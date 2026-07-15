@@ -1,6 +1,6 @@
-# ZenduONE Academy
+# ZenCam Academy
 
-An internal product-training portal built from recorded screenshots of the real ZenduONE training account. It does not connect to ZenduONE APIs or store login credentials.
+An internal product-training portal built from screenshots of the real ZenCam training account. It does not connect to ZenCam APIs or store login credentials.
 
 ## Current foundation
 
