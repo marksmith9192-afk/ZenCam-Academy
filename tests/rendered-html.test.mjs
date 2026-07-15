@@ -61,3 +61,22 @@ test("keeps real-screen workflows and Pages publishing configured", async () => 
   assert.match(pagesWorkflow, /actions\/deploy-pages@v4/);
   assert.match(pagesWorkflow, /path: \.next-pages/);
 });
+
+test("renders camera education and health resources", async () => {
+  const [howItWorks, cameraHealth] = await Promise.all([
+    render("/training/how-it-works"),
+    render("/training/camera-health"),
+  ]);
+
+  assert.equal(howItWorks.status, 200);
+  assert.equal(cameraHealth.status, 200);
+
+  const howHtml = await howItWorks.text();
+  const healthHtml = await cameraHealth.text();
+  assert.match(howHtml, /24–72 hours/);
+  assert.match(howHtml, /Requested clips move to the cloud/);
+  assert.match(howHtml, /Coaching can happen in real time/);
+  assert.match(healthHtml, /No lights with ignition on/);
+  assert.match(healthHtml, /Recording Health/);
+  assert.match(healthHtml, /Email Traxxis Support/);
+});
