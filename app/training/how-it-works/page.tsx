@@ -1,12 +1,18 @@
 import { SupportCta } from "../../../components/support-cta";
 import { TrainingShell } from "../../../components/training-shell";
 
-const statusItems = [
-  { status: "Driving", detail: "The vehicle is moving and reporting normally.", tone: "green" },
-  { status: "Stopped", detail: "The vehicle is parked or the engine is off.", tone: "red" },
-  { status: "Idle", detail: "The engine is running, but the vehicle is not moving.", tone: "amber" },
-  { status: "Offline", detail: "No recent signal has been received. The vehicle may be off, out of coverage, or need attention.", tone: "gray" },
-  { status: "Exception", detail: "A configured safety event or alert is ready to review.", tone: "orange" },
+const vehicleStatusItems = [
+  { status: "Moving", tone: "moving" },
+  { status: "Idling", tone: "idling" },
+  { status: "Stopped", tone: "stopped" },
+  { status: "Offline", tone: "offline" },
+  { status: "Exception", tone: "exception" },
+];
+
+const cameraStatusItems = [
+  { status: "Cam On", tone: "on" },
+  { status: "Cam Sleep", tone: "sleep" },
+  { status: "Cam Off", tone: "off" },
 ];
 
 export default function HowItWorksPage() {
@@ -46,7 +52,15 @@ export default function HowItWorksPage() {
       </div>
       <div>
         <div className="section-heading"><div><span>Fleet at a glance</span><h2>Understand vehicle status</h2></div></div>
-        <div className="status-list">{statusItems.map((item) => <article key={item.status}><i className={item.tone} /><div><strong>{item.status}</strong><p>{item.detail}</p></div></article>)}</div>
+        <div className="status-legend" aria-label="ZenCam vehicle and camera statuses">
+          <div className="status-legend-column" aria-label="Vehicle statuses">
+            {vehicleStatusItems.map((item) => <div className="status-legend-row" key={item.status}><span className={`vehicle-status-icon ${item.tone}`} aria-hidden="true" /><strong>{item.status}</strong></div>)}
+          </div>
+          <div className="status-legend-column camera-statuses" aria-label="Camera statuses">
+            {cameraStatusItems.map((item) => <div className="status-legend-row" key={item.status}><span className={`camera-status-icon ${item.tone}`} aria-hidden="true"><i /></span><strong>{item.status}</strong></div>)}
+          </div>
+          <p className="status-legend-note">Vehicle and camera statuses are shown separately, so you can quickly confirm both activity and camera availability.</p>
+        </div>
       </div>
     </section>
 
