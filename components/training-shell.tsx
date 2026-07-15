@@ -6,8 +6,8 @@ export function TrainingShell({ children, activeSection }: { children: React.Rea
   return (
     <div className="training-app">
       <header className="training-header">
-        <Link href="/" className="training-brand"><span>Z</span><strong>ZenduONE Academy</strong></Link>
-        <div className="training-header-meta"><span>Product training</span><div className="learner-avatar">MS</div></div>
+        <Link href="/" className="training-brand"><span>Z</span><strong>ZenCam Academy</strong></Link>
+        <div className="training-header-meta"><span>Customer training</span><div className="learner-avatar">MS</div></div>
       </header>
       <aside className="training-nav" aria-label="Training sections">
         <Link href="/" className={!activeSection ? "training-nav-home active" : "training-nav-home"}>
@@ -22,7 +22,7 @@ export function TrainingShell({ children, activeSection }: { children: React.Rea
             <em>{section.lessons.filter((lesson) => lesson.status === "available").length}</em>
           </Link>
         ))}
-        <div className="training-nav-note"><strong>Safe training</strong><span>Recorded demos cannot change fleet data.</span></div>
+        <div className="training-nav-note"><strong>Practice safely</strong><span>Lessons use real product screens and never change your fleet data.</span></div>
       </aside>
       <main className="training-main">{children}</main>
     </div>

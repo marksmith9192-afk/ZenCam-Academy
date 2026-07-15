@@ -19,8 +19,8 @@ export default async function LessonPage({ params }: { params: Promise<{ section
   if (!demo) notFound();
   return <TrainingShell activeSection={section.slug}>
     <div className="lesson-breadcrumb"><Link href="/">Training</Link><span>›</span><Link href={`/training/${section.slug}`}>{section.title}</Link><span>›</span><strong>{lesson.title}</strong></div>
-    <section className="lesson-heading"><div><span className="academy-kicker">Recorded lesson · {lesson.duration} minutes</span><h1>{lesson.title}</h1><p>{lesson.description}</p></div><aside><strong>What you’ll learn</strong><ol>{lesson.objectives.map((objective) => <li key={objective}>{objective}</li>)}</ol></aside></section>
+    <section className="lesson-heading"><div><span className="academy-kicker">ZenduONE lesson · {lesson.duration} minutes</span><h1>{lesson.title}</h1><p>{lesson.description}</p></div><aside><strong>What you’ll learn</strong><ol>{lesson.objectives.map((objective) => <li key={objective}>{objective}</li>)}</ol></aside></section>
     <ScreenshotWorkflowDemo variant={demo} />
-    <div className="lesson-next"><span>Complete the tour to finish this lesson.</span><Link href={`/training/${section.slug}`}>Back to {section.title} curriculum</Link></div>
+    <div className="lesson-next"><span>Complete the tour to finish this lesson.</span><Link href={`/training/${section.slug}`}>Back to {section.title} training</Link></div>
   </TrainingShell>;
 }

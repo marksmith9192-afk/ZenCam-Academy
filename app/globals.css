@@ -158,3 +158,31 @@ h1,h2,h3,.training-brand strong,.academy-progress strong{font-family:var(--font-
 
 @media(max-width:1050px){.training-app{grid-template-columns:76px 1fr}.training-main{padding:34px 28px 60px!important}.academy-progress{grid-template-columns:auto auto}.academy-progress>div{min-width:220px}.academy-progress small{text-align:right}.lesson-grid{grid-template-columns:repeat(2,1fr)}.training-nav-home .training-home-logo{width:31px;height:31px;flex-basis:31px}.training-main .simple-tour-card,.training-main .screenshot-tour-card{width:min(340px,40%)}}
 @media(max-width:720px){.training-main{padding:20px 15px 44px!important}.academy-hero{padding:48px 24px 28px;min-height:auto;gap:26px}.academy-hero h1{font-size:clamp(38px,12vw,52px)}.academy-hero h1>span{white-space:normal}.academy-subhead{font-size:16px}.academy-progress{margin:0;width:100%;display:flex;align-items:stretch;text-align:center}.academy-progress>div{min-width:0;width:100%}.academy-progress small{white-space:normal;text-align:center}.section-heading h2{font-size:27px}.section-card{grid-template-columns:auto 1fr auto}.section-number{display:none}.section-hero{padding:30px 24px;align-items:flex-start}.section-hero-icon{width:56px;height:56px}.section-hero h1{font-size:34px}.lesson-heading h1{font-size:36px}.lesson-card{min-height:210px}}
+
+/* Customer-facing academy polish */
+.academy-hero{border-radius:22px;min-height:430px;padding-bottom:42px}
+.academy-hero h1>span{margin-top:3px}
+.academy-benefits{position:relative;z-index:1;width:min(860px,100%);display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:left}
+.academy-benefits>div{display:flex;flex-direction:column;gap:2px;padding:15px 18px;border:1px solid #ffffff1f;border-radius:12px;background:#ffffff0b;backdrop-filter:blur(4px)}
+.academy-benefits strong{color:#fff;font-family:var(--font-outfit),Outfit,sans-serif;font-size:14px;letter-spacing:-.01em}
+.academy-benefits span{color:#aec3d7;font-size:11px}
+.academy-sections,.ready-lessons,.academy-roadmap,.curriculum{max-width:1240px;margin:54px auto 0}
+.section-card,.lesson-card{border-radius:14px}
+.section-card{min-height:166px;padding:26px}
+.lesson-card{min-height:222px}
+.lesson-card-top span{border-radius:999px;text-transform:uppercase;letter-spacing:.09em}
+.lesson-card-footer span{text-transform:none;letter-spacing:0;font-size:10px;color:#6a7e91}
+.academy-roadmap{padding-top:8px}
+.roadmap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.roadmap-card{display:flex;flex-direction:column;min-height:275px;padding:24px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,#fff,#fbfdff);box-shadow:0 8px 25px #0c285308}
+.roadmap-card>div{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.roadmap-card>div span{order:2;padding:5px 8px;border-radius:999px;background:#edf3f8;color:#60758a;font-size:9px;font-weight:750;text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
+.roadmap-card h3{margin:0;font-size:18px;line-height:1.25}
+.roadmap-card>p{margin:14px 0 16px;color:#687d90;font-size:12px;line-height:1.55}
+.roadmap-card ul{display:grid;gap:8px;margin:auto 0 0;padding:0;list-style:none}
+.roadmap-card li{position:relative;padding-left:16px;color:#40566b;font-size:11px;line-height:1.45}
+.roadmap-card li:before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.section-hero{border-radius:18px}
+
+@media(max-width:1050px){.roadmap-grid{grid-template-columns:repeat(2,1fr)}.academy-benefits{max-width:720px}}
+@media(max-width:720px){.academy-hero{border-radius:16px;padding:42px 22px 24px}.academy-benefits{grid-template-columns:1fr;gap:8px}.academy-benefits>div{text-align:center}.roadmap-grid{grid-template-columns:1fr}.roadmap-card{min-height:auto}.section-card,.lesson-card,.section-hero{border-radius:12px}}
