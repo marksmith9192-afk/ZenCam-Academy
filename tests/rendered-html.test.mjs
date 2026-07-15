@@ -76,6 +76,11 @@ test("renders camera education and health resources", async () => {
   assert.match(howHtml, /24–72 hours/);
   assert.match(howHtml, /Requested clips move to the cloud/);
   assert.match(howHtml, /Coaching can happen in real time/);
+  assert.match(howHtml, /Moving/);
+  assert.match(howHtml, /Idling/);
+  assert.match(howHtml, /Cam On/);
+  assert.match(howHtml, /Cam Sleep/);
+  assert.match(howHtml, /Cam Off/);
   assert.match(healthHtml, /No lights with ignition on/);
   assert.match(healthHtml, /Recording Health/);
   assert.match(healthHtml, /Email Traxxis Support/);
