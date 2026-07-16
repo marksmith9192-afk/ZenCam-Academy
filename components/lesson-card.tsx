@@ -7,7 +7,7 @@ export function LessonCard({ lesson, section }: { lesson: Lesson; section: Secti
     <h3>{lesson.title}</h3>
     <p>{lesson.description}</p>
     <div className="lesson-card-footer">
-      <span>{lesson.status === "available" ? "Guided training" : "In development"}</span>
+      <span>{lesson.status === "available" ? "Interactive lesson" : "Coming soon"}</span>
       <b>{lesson.status === "available" ? "Start lesson →" : "Coming soon"}</b>
     </div>
   </>;
