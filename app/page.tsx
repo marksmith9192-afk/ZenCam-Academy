@@ -53,7 +53,7 @@ export default function TrainingHome() {
     <section className="academy-roadmap">
       <div className="section-heading"><div><span>More training on the way</span><h2>Expanding across ZenCam</h2></div></div>
       <div className="roadmap-grid">{upcomingModules.map((module) => <article className="roadmap-card" key={module.title}>
-        <div><span>In development</span><h3>{module.title}</h3></div>
+        <div><span>Coming soon</span><h3>{module.title}</h3></div>
         <p>{module.description}</p>
         <ul>{module.lessons.map((lesson) => <li key={lesson}>{lesson}</li>)}</ul>
       </article>)}</div>

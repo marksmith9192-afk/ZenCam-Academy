@@ -1,6 +1,30 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
+
+const lessonRoutes = [
+  "/training/maps/view-trips",
+  "/training/maps/review-exceptions-from-trips",
+  "/training/maps/proximity-search",
+  "/training/maps/manage-assets",
+  "/training/maps/manage-drivers",
+  "/training/maps/manage-locations",
+  "/training/maps/request-trip-video",
+  "/training/maps/assign-trip-driver",
+  "/training/maps/contact-driver",
+  "/training/safety/coach-driver",
+  "/training/safety/review-scorecards",
+  "/training/safety/manage-event-status",
+  "/training/safety/configure-rules",
+  "/training/reports/schedule-report",
+  "/training/reports/run-report",
+  "/training/reports/saved-views",
+  "/training/reports/export-distribute",
+  "/training/admin/users-permissions",
+  "/training/admin/groups-assets",
+  "/training/admin/manage-drivers",
+  "/training/admin/notifications",
+];
 
 async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
@@ -84,4 +108,30 @@ test("renders camera education and health resources", async () => {
   assert.match(healthHtml, /No lights with ignition on/);
   assert.match(healthHtml, /Recording Health/);
   assert.match(healthHtml, /Email Traxxis Support/);
+});
+
+test("renders every customer lesson with clear guided controls", async () => {
+  for (const route of lessonRoutes) {
+    const response = await render(route);
+    assert.equal(response.status, 200, `${route} should render`);
+    const html = await response.text();
+    assert.match(html, /What you’ll learn/, `${route} should explain the outcome`);
+    assert.match(html, /Start guided lesson/, `${route} should offer guided practice`);
+    assert.match(html, /Watch step by step/, `${route} should offer an automatic walkthrough`);
+    assert.match(html, /Nothing in this lesson changes your fleet data/, `${route} should explain that practice is safe`);
+  }
+});
+
+test("keeps every lesson screenshot available and completion navigation wired", async () => {
+  const workflows = await readFile(new URL("../components/screenshot-workflow-demo.tsx", import.meta.url), "utf8");
+  const imagePaths = [...workflows.matchAll(/image: "([^"]+)"/g)].map((match) => match[1]);
+  assert.ok(imagePaths.length >= 40, "the curriculum should retain its captured ZenCam screens");
+
+  for (const imagePath of new Set(imagePaths)) {
+    await access(new URL(`../public${imagePath}`, import.meta.url));
+  }
+
+  assert.match(workflows, /Lesson complete/);
+  assert.match(workflows, /Next: \{nextLesson\.label\}/);
+  assert.match(workflows, /5000/);
 });
