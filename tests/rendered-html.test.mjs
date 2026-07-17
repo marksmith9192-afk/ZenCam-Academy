@@ -80,6 +80,28 @@ test("keeps real-screen workflows and Pages publishing configured", async () => 
   assert.match(workflows, /03-nearby-assets\.png/);
   assert.match(workflows, /06-request-submitted\.png/);
   assert.match(workflows, /Video request submitted/);
+  assert.match(
+    workflows,
+    /title: "Open exceptions for the trip"[\s\S]*?hotspot: \{ x: 8\.5, y: 54, width: 32, height: 7 \}/,
+  );
+  assert.match(
+    workflows,
+    /title: "Select a No Seatbelt exception"[\s\S]*?hotspot: \{ x: 10\.5, y: 61\.5, width: 29, height: 10 \}/,
+  );
+  assert.doesNotMatch(
+    workflows,
+    /title: "Select an exception to review"[\s\S]*?hotspot: \{ x: 8, y: 45/,
+  );
+
+  const hotspots = [...workflows.matchAll(
+    /hotspot: \{ x: ([\d.]+), y: ([\d.]+), width: ([\d.]+), height: ([\d.]+) \}/g,
+  )];
+  assert.ok(hotspots.length >= 50, "the guided lessons should retain their targeted highlights");
+  for (const [, xValue, yValue, widthValue, heightValue] of hotspots) {
+    const [x, y, width, height] = [xValue, yValue, widthValue, heightValue].map(Number);
+    assert.ok(x >= 0 && y >= 0 && width > 0 && height > 0, "hotspot values should be positive");
+    assert.ok(x + width <= 100 && y + height <= 100, "hotspots should stay inside the captured screen");
+  }
 
   assert.match(nextConfig, /output: "export"/);
   assert.match(pagesWorkflow, /actions\/deploy-pages@v4/);
