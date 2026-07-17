@@ -18,7 +18,7 @@ export default function TrainingHome() {
   return <TrainingShell>
     <section className="academy-hero">
       <div className="academy-hero-copy">
-        <span className="academy-kicker">Welcome to ZenCam Academy</span>
+        <span className="academy-kicker">Welcome to ZenCam Academy by Traxxis GPS</span>
         <h1>Build confidence.<span>Drive better outcomes.</span></h1>
         <strong className="academy-subhead">Practical training for every part of your fleet operation.</strong>
         <p>Learn essential ZenCam workflows through clear, self-paced lessons using real product screens.</p>
@@ -46,7 +46,7 @@ export default function TrainingHome() {
     </section>
 
     <section className="ready-lessons">
-      <div className="section-heading"><div><span>Recommended lessons</span><h2>Start with a popular task</h2></div><p>Focused lessons help you get comfortable in just a few minutes.</p></div>
+      <div className="section-heading"><div><span>Recommended lessons</span><h2>Choose a helpful starting point</h2></div><p>Focused lessons help you get comfortable in just a few minutes.</p></div>
       <div className="lesson-grid">{featuredLessons.map(({ section, ...lesson }) => <LessonCard key={`${section.slug}-${lesson.slug}`} section={section.slug} lesson={lesson} />)}</div>
     </section>
 
