@@ -55,6 +55,9 @@ test("server-renders the ZenCam Academy curriculum", async () => {
   const html = await response.text();
   assert.match(html, /<title>ZenCam Academy<\/title>/i);
   assert.match(html, /Build confidence/);
+  assert.match(html, /Welcome to ZenCam Academy by Traxxis GPS/);
+  assert.match(html, /Choose a helpful starting point/);
+  assert.doesNotMatch(html, /Start with a popular task/);
   assert.match(html, /Traxxis customer support/);
   assert.match(html, /View vehicle trips/);
   assert.match(html, /Request video from a trip/);
