@@ -22,7 +22,7 @@ export default async function LessonPage({ params }: { params: Promise<{ section
   const nextLesson = availableLessons[lessonIndex + 1];
   return <TrainingShell activeSection={section.slug}>
     <div className="lesson-breadcrumb"><Link href="/">Training</Link><span>›</span><Link href={`/training/${section.slug}`}>{section.title}</Link><span>›</span><strong>{lesson.title}</strong></div>
-    <section className="lesson-heading"><div><span className="academy-kicker">ZenCam lesson · {lesson.duration} minutes</span><h1>{lesson.title}</h1><p>{lesson.description}</p></div><aside><strong>What you’ll learn</strong><ol>{lesson.objectives.map((objective) => <li key={objective}>{objective}</li>)}</ol></aside></section>
+    <section className="lesson-heading"><div><span className="academy-kicker">ZenduONE lesson · {lesson.duration} minutes</span><h1>{lesson.title}</h1><p>{lesson.description}</p></div><aside><strong>What you’ll learn</strong><ol>{lesson.objectives.map((objective) => <li key={objective}>{objective}</li>)}</ol></aside></section>
     <ScreenshotWorkflowDemo
       variant={demo}
       moduleLink={{ href: `/training/${section.slug}`, label: `${section.title} training` }}

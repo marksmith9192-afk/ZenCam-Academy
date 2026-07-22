@@ -51,7 +51,8 @@ const workflows: Record<DemoVariant, RecordedWorkflow> = {
       { image: "/demo-screens/maps/manage-assets/01-assets-list.png", label: "Open assets", title: "Choose an asset", body: "Find AVIATOR_ZenCAM LITE in the Asset List and select its row to open the asset record.", hotspot: { x: 7, y: 70, width: 91, height: 9 } },
       { image: "/demo-screens/maps/manage-assets/02-asset-overview.png", label: "Edit the asset", title: "Choose Edit", body: "From the asset overview, choose Edit to update identification and operating details.", hotspot: { x: 43.5, y: 20, width: 7, height: 7 } },
       { image: "/demo-screens/maps/manage-assets/03-edit-asset.png", label: "Update details", title: "Edit the asset name and details", body: "Update the name, asset type, groups, vehicle details, odometer, engine hours, and other information, then save your changes.", hotspot: { x: 6.5, y: 18, width: 45, height: 60 } },
-      { image: "/demo-screens/maps/manage-assets/03-edit-asset.png", label: "Complete", title: "You can now manage an asset", body: "You know how to find an asset, open its edit form, and update its identifying and operating details." },
+      { image: "/demo-screens/maps/manage-assets/03-edit-asset.png", label: "Save changes", title: "Choose Save", body: "Review the updated asset information, then choose Save. Reopen the asset afterward to confirm the new details are displayed.", hotspot: { x: 92.5, y: 8, width: 6, height: 7 } },
+      { image: "/demo-screens/maps/manage-assets/03-edit-asset.png", label: "Complete", title: "Asset changes saved", body: "You know how to find an asset, update its identifying and operating details, save the record, and verify the result." },
     ],
   },
   "map-manage-drivers": {
@@ -62,19 +63,21 @@ const workflows: Record<DemoVariant, RecordedWorkflow> = {
       { image: "/demo-screens/maps/manage-drivers/01-drivers-list.png", label: "Add a driver", title: "Choose Create User", body: "Choose Create User at the top right of the Drivers page to open a new profile.", hotspot: { x: 82.5, y: 17.5, width: 11.5, height: 7 } },
       { image: "/demo-screens/maps/manage-drivers/02-add-user.png", label: "Enter details", title: "Complete the user details", body: "Enter the driver's identity, contact details, groups, time zone, security, map provider, and language.", hotspot: { x: 7, y: 19, width: 47, height: 78 } },
       { image: "/demo-screens/maps/manage-drivers/03-driver-profile.png", label: "Set the profile", title: "Select Driver as the user type", body: "Under Profile Details, choose Driver so the new user is available for vehicle and trip assignment.", hotspot: { x: 7, y: 76, width: 48, height: 17 } },
+      { image: "/demo-screens/maps/manage-drivers/02-add-user.png", label: "Save the driver", title: "Choose Save", body: "Review the required fields, group, security, and Driver user type, then choose Save to create the driver profile.", hotspot: { x: 92.5, y: 8, width: 6, height: 7 } },
       { image: "/demo-screens/maps/assign-driver/02-driver-list.png", label: "Assign the driver", title: "Choose the driver on a trip", body: "Open the driver selector, search for the driver, and select the correct name. The assignment applies to the trip you opened.", hotspot: { x: 36, y: 7, width: 25.5, height: 44 } },
-      { image: "/demo-screens/maps/assign-driver/02-driver-list.png", label: "Complete", title: "You can now add and assign a driver", body: "You know how to create a driver profile and where to assign that driver to a trip." },
+      { image: "/demo-screens/maps/assign-driver/02-driver-list.png", label: "Complete", title: "Driver created and assigned", body: "You know how to save a driver profile, assign that person to a trip, and verify the selected name on the trip." },
     ],
   },
   "manage-locations": {
     title: "Create locations and zones",
     subtitle: "Create a named place and draw the map boundary that defines its zone.",
     steps: [
-      { image: "/demo-screens/maps/manage-locations/01-locations-list.png", label: "Open locations", title: "Review saved locations", body: "Locations are named places such as offices, yards, customer sites, or homes. Their zones let ZenCam recognize activity inside a defined area.", hotspot: { x: 7, y: 22, width: 91, height: 61 } },
+      { image: "/demo-screens/maps/manage-locations/01-locations-list.png", label: "Open locations", title: "Review saved locations", body: "Locations are named places such as offices, yards, customer sites, or homes. Their zones let ZenduONE recognize activity inside a defined area.", hotspot: { x: 7, y: 22, width: 91, height: 61 } },
       { image: "/demo-screens/maps/manage-locations/02-create-zone-circle.png", label: "Create a location", title: "Enter the location details", body: "Choose Create Location, then enter the name, group, tag, address, contact information, business hours, and stop duration.", hotspot: { x: 5, y: 12, width: 43, height: 80 } },
       { image: "/demo-screens/maps/manage-locations/02-create-zone-circle.png", label: "Define the zone", title: "Set a circular geofence", body: "A geofence is the zone boundary around the location. Choose Circle, then set its color, opacity, and radius on the map.", hotspot: { x: 72.5, y: 55, width: 26.5, height: 42 } },
       { image: "/demo-screens/maps/manage-locations/03-zone-polygon.png", label: "Shape the zone", title: "Use a polygon for an exact boundary", body: "Choose Polygon when the location needs a custom boundary, then place points around the area before saving.", hotspot: { x: 72.5, y: 69, width: 26.5, height: 29 } },
-      { image: "/demo-screens/maps/manage-locations/03-zone-polygon.png", label: "Complete", title: "You can now create a location zone", body: "You know what a zone represents and when to use a circle or polygon to define its boundary." },
+      { image: "/demo-screens/maps/manage-locations/03-zone-polygon.png", label: "Save the location", title: "Choose Save", body: "Review the location details and boundary, then choose Save. Confirm the new location appears in the Locations list.", hotspot: { x: 8, y: 89, width: 30, height: 8 } },
+      { image: "/demo-screens/maps/manage-locations/03-zone-polygon.png", label: "Complete", title: "Location zone saved", body: "You know how to create a location, define its circular or polygon boundary, save it, and verify it in the list." },
     ],
   },
   "request-trip-video": {
@@ -95,8 +98,8 @@ const workflows: Record<DemoVariant, RecordedWorkflow> = {
     subtitle: "Open a trip and learn how to choose the correct driver for that trip.",
     steps: [
       { image: "/demo-screens/maps/assign-driver/01-trip-timeline.png", label: "Find the driver", title: "Locate the trip driver", body: "Each drive segment shows the assigned driver and an edit control.", hotspot: { x: 10.5, y: 74.5, width: 13.5, height: 6.5 } },
-      { image: "/demo-screens/maps/assign-driver/02-driver-list.png", label: "Choose the driver", title: "Search and select the correct driver", body: "Open the list, search by name, and select the driver who completed the trip. Choose Unassign only when no driver should be linked to it.", hotspot: { x: 36, y: 7, width: 25.5, height: 44 } },
-      { image: "/demo-screens/maps/assign-driver/02-driver-list.png", label: "Complete", title: "You can now assign a trip driver", body: "You know where to find the assignment and how to choose or remove a driver for one trip." },
+      { image: "/demo-screens/maps/assign-driver/02-driver-list.png", label: "Choose the driver", title: "Search and select the correct driver", body: "Open the list, search by name, and select the driver who completed the trip. The selection applies immediately; choose Unassign only when no driver should be linked to it.", hotspot: { x: 36, y: 7, width: 25.5, height: 44 } },
+      { image: "/demo-screens/maps/assign-driver/02-driver-list.png", label: "Complete", title: "Trip driver assigned", body: "You know where to make the assignment, how to choose or remove a driver, and how to verify the selected name on the trip." },
     ],
   },
   "contact-driver": {
@@ -106,19 +109,20 @@ const workflows: Record<DemoVariant, RecordedWorkflow> = {
       { image: "/demo-screens/maps/contact-driver/01-in-route.png", label: "Confirm movement", title: "Open a moving vehicle", body: "Confirm the vehicle is moving and the correct driver is assigned before starting communication.", hotspot: { x: 66, y: 36, width: 18, height: 13 } },
       { image: "/demo-screens/maps/contact-driver/01-in-route.png", label: "Choose a channel", title: "Locate Call and Message", body: "Call and Message appear beside the active driver. Follow your organization’s hands-free and safety policy before contacting a moving driver.", hotspot: { x: 39, y: 1, width: 19, height: 8 } },
       { image: "/demo-screens/maps/contact-driver/02-message-composer.png", label: "Prepare a message", title: "Use the message composer", body: "Confirm the vehicle, driver, and online status. Then choose an approved quick reply or write a short message that follows your company’s safety policy.", hotspot: { x: 69, y: 18, width: 30, height: 79 } },
-      { image: "/demo-screens/maps/contact-driver/01-in-route.png", label: "Complete", title: "You can now contact an in-route driver", body: "You know how to confirm the driver and find the Call and Message controls while following your organization’s safety policy." },
+      { image: "/demo-screens/maps/contact-driver/02-message-composer.png", label: "Send the message", title: "Press Enter to send", body: "Review the message once more, then press Enter to send it. Confirm the message appears in the conversation before closing the panel.", hotspot: { x: 69, y: 83, width: 30, height: 14 } },
+      { image: "/demo-screens/maps/contact-driver/02-message-composer.png", label: "Complete", title: "Message sent", body: "You know how to confirm the active driver, choose Call or Message, send a short message, and verify it in the conversation while following your safety policy." },
     ],
   },
   "coach-driver": {
-    title: "Coach a driver",
-    subtitle: "Find an event that needs coaching, review its evidence, and locate the coaching record.",
+    title: "Review a coaching-ready exception",
+    subtitle: "Find an event that needs coaching, review its evidence, and open the coaching workflow.",
     steps: [
       { image: "/demo-screens/safety/coach-driver/01-exceptions.png", label: "Open coaching", title: "Choose Needs Coaching", body: "Narrow the exception queue to incidents that are ready for a coaching review.", hotspot: { x: 22.8, y: 8.3, width: 12.8, height: 7 } },
       { image: "/demo-screens/safety/coach-driver/02-needs-coaching.png", label: "Choose a rule", title: "Open No Seatbelt", body: "Select a rule to see the affected vehicles and incident count.", hotspot: { x: 7, y: 40.5, width: 92, height: 10 } },
       { image: "/demo-screens/safety/coach-driver/03-rule-vehicles.png", label: "Choose a vehicle", title: "Open ADP Vehicle 1", body: "Open the vehicle with incidents that need coaching.", hotspot: { x: 7, y: 42.5, width: 92, height: 9 } },
       { image: "/demo-screens/safety/coach-driver/04-incidents.png", label: "Review an incident", title: "Open a No Seatbelt exception", body: "Choose a No Seatbelt row to review its video, timeline, status, and driver context.", hotspot: { x: 7, y: 43.5, width: 92, height: 16 } },
       { image: "/demo-screens/safety/coach-driver/05-incident-detail.png", label: "Document coaching", title: "Review the evidence and choose Add Coaching", body: "Confirm the video and event details first. Then choose Add Coaching to record the conversation, outcome, and any follow-up needed.", hotspot: { x: 51.5, y: 61.5, width: 13.5, height: 8 } },
-      { image: "/demo-screens/safety/coach-driver/05-incident-detail.png", label: "Complete", title: "You can now begin a coaching record", body: "You know how to find an event, review its evidence, and open the coaching form for the driver." },
+      { image: "/demo-screens/safety/coach-driver/05-incident-detail.png", label: "Complete", title: "Exception ready for coaching", body: "You know how to find a coaching-ready event, review its evidence, and open the coaching workflow. A separate lesson will cover completing and saving the coaching record." },
     ],
   },
   "review-scorecards": {
@@ -132,24 +136,25 @@ const workflows: Record<DemoVariant, RecordedWorkflow> = {
     ],
   },
   "manage-event-status": {
-    title: "Manage exception status",
-    subtitle: "Use the Safety queue to find an event and understand its review and coaching status.",
+    title: "Review exception follow-up status",
+    subtitle: "Use the Safety queue to find an event and understand its current review or coaching status.",
     steps: [
       { image: "/demo-screens/safety/coach-driver/01-exceptions.png", label: "Filter status", title: "Choose a review queue", body: "Use the exception status filters to isolate incidents that need review or coaching.", hotspot: { x: 22.8, y: 8.3, width: 12.8, height: 7 } },
       { image: "/demo-screens/safety/coach-driver/03-rule-vehicles.png", label: "Choose a vehicle", title: "Open the affected vehicle", body: "Review the vehicle and incident totals associated with the selected rule.", hotspot: { x: 7, y: 42.5, width: 92, height: 9 } },
       { image: "/demo-screens/safety/coach-driver/04-incidents.png", label: "Open an event", title: "Review the exception", body: "Choose the incident whose review, coaching, or completion status needs attention.", hotspot: { x: 7, y: 43.5, width: 92, height: 16 } },
-      { image: "/demo-screens/safety/coach-driver/05-incident-detail.png", label: "Update status", title: "Open the status menu", body: "After reviewing the evidence, open Needs Coaching to choose the appropriate follow-up status in your own account.", hotspot: { x: 66.8, y: 10.5, width: 11.5, height: 8 } },
-      { image: "/demo-screens/safety/coach-driver/05-incident-detail.png", label: "Complete", title: "You can now manage an event’s status", body: "You know how to find an event, review its evidence, and locate the controls for coaching and follow-up." },
+      { image: "/demo-screens/safety/coach-driver/05-incident-detail.png", label: "Review status", title: "Locate the current status", body: "After reviewing the evidence, check the status shown at the top of the event. This example is marked Needs Coaching.", hotspot: { x: 66.8, y: 10.5, width: 11.5, height: 8 } },
+      { image: "/demo-screens/safety/coach-driver/05-incident-detail.png", label: "Complete", title: "Follow-up status identified", body: "You know how to find an event, review its evidence, and identify its current follow-up status. A separate lesson will cover changing and confirming that status." },
     ],
   },
   "configure-rules": {
     title: "Set up safety rules",
-    subtitle: "Learn where to choose the driving behaviors ZenCam detects and how the fleet is notified.",
+    subtitle: "Learn where to choose the driving behaviors ZenduONE detects and how the fleet is notified.",
     steps: [
       { image: "/demo-screens/admin/notifications/01-admin-settings.png", label: "Open rules", title: "Choose Rules", body: "Rules contains the safety and operational automations available to the fleet.", hotspot: { x: 68.5, y: 33, width: 29, height: 15.5 } },
       { image: "/demo-screens/admin/notifications/02-rules.png", label: "Start a rule", title: "Choose Create Rule", body: "Open the builder to define the behavior, scope, and response.", hotspot: { x: 82.5, y: 25.5, width: 12, height: 7.5 } },
       { image: "/demo-screens/admin/notifications/03-create-rule.png", label: "Set conditions", title: "Choose triggers and actions", body: "Choose the source and rule type, set the conditions that trigger the rule, and select who should be notified. Review every setting before saving in your own account.", hotspot: { x: 7, y: 18, width: 91, height: 80 } },
-      { image: "/demo-screens/admin/notifications/03-create-rule.png", label: "Complete", title: "You can now begin a safety rule", body: "You know where to find the rule builder and how its conditions and notification actions fit together." },
+      { image: "/demo-screens/admin/notifications/03-create-rule.png", label: "Save the rule", title: "Choose Save", body: "Review the rule name, scope, severity, conditions, and actions, then choose Save. Confirm the new rule appears in the Custom Rules list.", hotspot: { x: 92.5, y: 7, width: 6, height: 7 } },
+      { image: "/demo-screens/admin/notifications/03-create-rule.png", label: "Complete", title: "Safety rule saved", body: "You know how to configure a rule, save it, and verify it in the Custom Rules list." },
     ],
   },
   "report-schedule": {
@@ -161,7 +166,8 @@ const workflows: Record<DemoVariant, RecordedWorkflow> = {
       { image: "/demo-screens/reports/schedule-report/03-report-actions.png", label: "Edit scheduling", title: "Choose Email Schedule", body: "Choose Email Schedule from the report menu to open its delivery settings.", hotspot: { x: 85, y: 22.5, width: 13, height: 7 } },
       { image: "/demo-screens/reports/schedule-report/04-report-editor.png", label: "Enable delivery", title: "Turn on Email Schedule", body: "Enable scheduling after the report fields, filters, and sharing settings are correct.", hotspot: { x: 47.7, y: 82.5, width: 5, height: 6 } },
       { image: "/demo-screens/reports/schedule-report/05-email-schedule.png", label: "Set delivery", title: "Choose frequency, format, and recipients", body: "Set the delivery time and frequency, choose the file format, and add each recipient. In your own account, review the settings before saving.", hotspot: { x: 36.5, y: 68, width: 61, height: 22 } },
-      { image: "/demo-screens/reports/schedule-report/05-email-schedule.png", label: "Complete", title: "You can now schedule a report", body: "You know how to open Email Schedule and choose when, how, and to whom the report is delivered." },
+      { image: "/demo-screens/reports/schedule-report/05-email-schedule.png", label: "Save the schedule", title: "Choose Save View", body: "Review the schedule and recipient list, then choose Save View to store the recurring delivery settings.", hotspot: { x: 89, y: 91, width: 9, height: 7 } },
+      { image: "/demo-screens/reports/schedule-report/05-email-schedule.png", label: "Complete", title: "Report schedule saved", body: "You know how to configure the delivery schedule, save it, and return to the report to verify the frequency." },
     ],
   },
   "run-report": {
@@ -180,17 +186,18 @@ const workflows: Record<DemoVariant, RecordedWorkflow> = {
       { image: "/demo-screens/reports/schedule-report/02-report-results.png", label: "Open actions", title: "Open the report menu", body: "Use the actions menu to edit the current report configuration.", hotspot: { x: 94, y: 9.8, width: 4.5, height: 7 } },
       { image: "/demo-screens/reports/schedule-report/03-report-actions.png", label: "Edit the report", title: "Choose Edit Report", body: "Choose Edit Report to review fields, filters, sharing, and delivery settings.", hotspot: { x: 85, y: 16.5, width: 13, height: 7 } },
       { image: "/demo-screens/reports/schedule-report/04-report-editor.png", label: "Configure a view", title: "Set fields and filters", body: "Choose the fields and filters you want to reuse. In your own account, review the sharing settings and save the report when it is ready.", hotspot: { x: 7, y: 18, width: 90, height: 68 } },
-      { image: "/demo-screens/reports/schedule-report/04-report-editor.png", label: "Complete", title: "You can now prepare a saved report view", body: "You know where to edit a report and how to set up reusable fields and filters." },
+      { image: "/demo-screens/reports/schedule-report/04-report-editor.png", label: "Save the view", title: "Choose Save View", body: "Review the selected columns, filters, and sharing settings, then choose Save View. Confirm the view appears under Saved View in the report library.", hotspot: { x: 89.5, y: 91, width: 9, height: 7 } },
+      { image: "/demo-screens/reports/schedule-report/04-report-editor.png", label: "Complete", title: "Report view saved", body: "You know how to configure reusable fields and filters, save the view, and find it again under Saved View." },
     ],
   },
   "export-distribute": {
-    title: "Export and share a report",
-    subtitle: "Find the report actions used to download results or send them to other people.",
+    title: "Choose a report delivery option",
+    subtitle: "Find the actions used to download results or prepare a report for other people.",
     steps: [
       { image: "/demo-screens/reports/schedule-report/02-report-results.png", label: "Open actions", title: "Open the report menu", body: "Use the actions menu from a completed report.", hotspot: { x: 94, y: 9.8, width: 4.5, height: 7 } },
       { image: "/demo-screens/reports/schedule-report/03-report-actions.png", label: "Choose an option", title: "Find download and sharing actions", body: "Choose Download when you need a local copy. Choose Share or Email Schedule when other people need access to the results.", hotspot: { x: 84.5, y: 16.5, width: 13.5, height: 31.5 } },
       { image: "/demo-screens/reports/schedule-report/05-email-schedule.png", label: "Review recipients", title: "Confirm the format and audience", body: "Check the file format and every recipient before sending or saving. Share fleet information only with authorized people.", hotspot: { x: 36.5, y: 68, width: 61, height: 22 } },
-      { image: "/demo-screens/reports/schedule-report/05-email-schedule.png", label: "Complete", title: "You can now export or share a report", body: "You know where to find the report actions and what to confirm before distributing fleet information." },
+      { image: "/demo-screens/reports/schedule-report/05-email-schedule.png", label: "Complete", title: "Delivery option selected", body: "You know where to find each delivery action and what to review before distributing fleet information. Separate lessons will cover completing a download and sharing with selected users." },
     ],
   },
   "users-permissions": {
@@ -200,7 +207,8 @@ const workflows: Record<DemoVariant, RecordedWorkflow> = {
       { image: "/demo-screens/admin/users-permissions/01-admin-settings.png", label: "Open users", title: "Choose User Management", body: "User Management contains drivers, technicians, passengers, and general users.", hotspot: { x: 7.5, y: 33, width: 28, height: 15.5 } },
       { image: "/demo-screens/admin/users-permissions/02-users.png", label: "Add a user", title: "Choose Create User", body: "Open the user form from the Admin user list.", hotspot: { x: 82.5, y: 17.5, width: 11.5, height: 7 } },
       { image: "/demo-screens/admin/users-permissions/03-create-user.png", label: "Configure access", title: "Complete user details and security", body: "Enter the person’s details, choose the correct groups and user type, and review security, time zone, map, and language settings before saving in your own account.", hotspot: { x: 7, y: 18, width: 48, height: 80 } },
-      { image: "/demo-screens/admin/users-permissions/03-create-user.png", label: "Complete", title: "You can now prepare a new user", body: "You know where to create a user and which settings control that person’s access to ZenCam." },
+      { image: "/demo-screens/admin/users-permissions/03-create-user.png", label: "Save the user", title: "Choose Save", body: "Review the required fields, groups, user type, and security settings, then choose Save. Confirm the person appears in User Management.", hotspot: { x: 92.5, y: 8, width: 6, height: 7 } },
+      { image: "/demo-screens/admin/users-permissions/03-create-user.png", label: "Complete", title: "User saved", body: "You know how to create a user, save the record, and verify the person in User Management." },
     ],
   },
   "groups-assets": {
@@ -219,7 +227,8 @@ const workflows: Record<DemoVariant, RecordedWorkflow> = {
       { image: "/demo-screens/admin/manage-drivers/01-admin-settings.png", label: "Open users", title: "Choose User Management", body: "Drivers are managed alongside other user types in Admin.", hotspot: { x: 7.5, y: 33, width: 28, height: 15.5 } },
       { image: "/demo-screens/admin/manage-drivers/02-users.png", label: "Filter drivers", title: "Choose the Drivers tab", body: "The Drivers view isolates driver profiles and shows access, groups, and login information.", hotspot: { x: 12.2, y: 10.5, width: 7, height: 5.5 } },
       { image: "/demo-screens/maps/manage-drivers/03-driver-profile.png", label: "Set driver type", title: "Choose Driver as the user type", body: "In Profile Details, choose Driver so the person can be assigned to vehicles and trips.", hotspot: { x: 7, y: 68, width: 45, height: 24 } },
-      { image: "/demo-screens/admin/users-permissions/03-create-user.png", label: "Complete", title: "You can now manage a driver profile", body: "You know how to filter the user list for drivers and where to update driver profile settings." },
+      { image: "/demo-screens/admin/users-permissions/03-create-user.png", label: "Save the driver", title: "Choose Save", body: "Review the driver profile, groups, contact details, and security settings, then choose Save. Confirm the updated driver appears in the Drivers list.", hotspot: { x: 92.5, y: 8, width: 6, height: 7 } },
+      { image: "/demo-screens/admin/users-permissions/03-create-user.png", label: "Complete", title: "Driver profile saved", body: "You know how to find a driver, update the profile, save it, and verify the result in User Management." },
     ],
   },
   "notifications": {
@@ -229,7 +238,8 @@ const workflows: Record<DemoVariant, RecordedWorkflow> = {
       { image: "/demo-screens/admin/notifications/01-admin-settings.png", label: "Open automation", title: "Choose Rules", body: "Rules control safety, productivity, maintenance triggers, and follow-up actions.", hotspot: { x: 68.5, y: 33, width: 29, height: 15.5 } },
       { image: "/demo-screens/admin/notifications/02-rules.png", label: "Create a rule", title: "Open Create Rule", body: "Start from the custom-rule library to define a new automation.", hotspot: { x: 82.5, y: 25.5, width: 12, height: 7.5 } },
       { image: "/demo-screens/admin/notifications/03-create-rule.png", label: "Configure actions", title: "Set conditions and notifications", body: "Choose the rule source and type, set the conditions, and select the notification or coaching actions. Review every setting before saving in your own account.", hotspot: { x: 7, y: 18, width: 91, height: 80 } },
-      { image: "/demo-screens/admin/notifications/03-create-rule.png", label: "Complete", title: "You can now begin a rule", body: "You know where to create a rule and how its conditions and notification actions fit together." },
+      { image: "/demo-screens/admin/notifications/03-create-rule.png", label: "Save the rule", title: "Choose Save", body: "Review the rule name, scope, conditions, and notification actions, then choose Save. Confirm the new rule appears in the Custom Rules list.", hotspot: { x: 92.5, y: 7, width: 6, height: 7 } },
+      { image: "/demo-screens/admin/notifications/03-create-rule.png", label: "Complete", title: "Rule saved", body: "You know how to configure a rule, save it, and verify it in the Custom Rules list." },
     ],
   },
 };
@@ -294,12 +304,12 @@ export function ScreenshotWorkflowDemo({
   function finish() { setCompleted(true); setMode(null); }
 
   return <section className="workflow-demo-wrap screenshot-workflow">
-    <div className="workflow-demo-intro"><div><span>Interactive ZenCam lesson</span><h2>{workflow.title}</h2><p>{workflow.subtitle}</p></div><div><button onClick={() => start("guided")}>Start guided lesson →</button><button onClick={() => start("watch")}>▶ Watch step by step</button></div></div>
-    <div className="workflow-demo-shell"><div className="workflow-browser"><i/><i/><i/><span>academy.zencam.com/{variant}</span><b>PRACTICE</b></div><div className="screenshot-stage">
-      <img src={assetPath(current.image)} alt={`ZenCam product screen — ${current.title}`} />
+    <div className="workflow-demo-intro"><div><span>Interactive ZenduONE lesson</span><h2>{workflow.title}</h2><p>{workflow.subtitle}</p></div><div><button onClick={() => start("guided")}>Start guided lesson →</button><button onClick={() => start("watch")}>▶ Watch step by step</button></div></div>
+    <div className="workflow-demo-shell"><div className="workflow-browser"><i/><i/><i/><span>academy.zendu.one/{variant}</span><b>PRACTICE</b></div><div className="screenshot-stage">
+      <img src={assetPath(current.image)} alt={`ZenduONE platform screen — ${current.title}`} />
       {running && current.hotspot && <button className="screenshot-hotspot" aria-label={`${current.title}. Select highlighted area.`} onClick={advance} style={{ left: `${current.hotspot.x}%`, top: `${current.hotspot.y}%`, width: `${current.hotspot.width}%`, height: `${current.hotspot.height}%` }} />}
       {running && <>{!current.hotspot && <div className="screenshot-complete-mark">✓</div>}<button className="simple-exit screenshot-exit" onClick={exit}>× Exit lesson</button><aside className={`simple-tour-card screenshot-tour-card ${placement.side}`} style={placement.style}><div><span>{step + 1}</span><strong>{current.label}</strong></div><h3>{current.title}</h3><p>{current.body}</p><footer><button disabled={step === 0} onClick={() => setStep((value) => Math.max(0, value - 1))}>← Back</button><span>{step + 1} / {workflow.steps.length}</span>{step === workflow.steps.length - 1 ? <button className="next" onClick={finish}>Finish lesson</button> : <button className="next" onClick={advance}>Next →</button>}</footer></aside></>}
     </div></div>
-    {completed && <aside ref={completionRef} className="lesson-complete" aria-live="polite"><div><span>Lesson complete</span><h3>You’re ready to use this workflow in ZenCam.</h3><p>Repeat the lesson at any time, or continue to the next task.</p></div><div><button onClick={() => start("guided")}>Review again</button>{nextLesson ? <Link href={nextLesson.href}>Next: {nextLesson.label} →</Link> : <Link href={moduleLink.href}>Back to {moduleLink.label} →</Link>}</div></aside>}
+    {completed && <aside ref={completionRef} className="lesson-complete" aria-live="polite"><div><span>Lesson complete</span><h3>You’re ready to use this workflow in ZenduONE.</h3><p>Repeat the lesson at any time, or continue to the next task.</p></div><div><button onClick={() => start("guided")}>Review again</button>{nextLesson ? <Link href={nextLesson.href}>Next: {nextLesson.label} →</Link> : <Link href={moduleLink.href}>Back to {moduleLink.label} →</Link>}</div></aside>}
   </section>;
 }

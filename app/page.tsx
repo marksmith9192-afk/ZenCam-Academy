@@ -18,10 +18,10 @@ export default function TrainingHome() {
   return <TrainingShell>
     <section className="academy-hero">
       <div className="academy-hero-copy">
-        <span className="academy-kicker">Welcome to ZenCam Academy by Traxxis GPS</span>
+        <span className="academy-kicker">Welcome to ZenduONE Academy by Traxxis GPS</span>
         <h1>Build confidence.<span>Drive better outcomes.</span></h1>
         <strong className="academy-subhead">Practical training for every part of your fleet operation.</strong>
-        <p>Learn essential ZenCam workflows through clear, self-paced lessons using real product screens.</p>
+        <p>Learn essential ZenduONE workflows through clear, self-paced lessons using real platform screens.</p>
       </div>
       <div className="academy-benefits" aria-label="Training benefits">
         <div><strong>Self-paced</strong><span>Learn on your schedule</span></div>
@@ -51,7 +51,7 @@ export default function TrainingHome() {
     </section>
 
     <section className="academy-roadmap">
-      <div className="section-heading"><div><span>More training on the way</span><h2>Expanding across ZenCam</h2></div></div>
+      <div className="section-heading"><div><span>More training on the way</span><h2>Expanding across ZenduONE</h2></div></div>
       <div className="roadmap-grid">{upcomingModules.map((module) => <article className="roadmap-card" key={module.title}>
         <div><span>Coming soon</span><h3>{module.title}</h3></div>
         <p>{module.description}</p>

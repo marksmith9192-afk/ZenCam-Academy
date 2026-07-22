@@ -47,21 +47,21 @@ async function render(pathname = "/") {
   );
 }
 
-test("server-renders the ZenCam Academy curriculum", async () => {
+test("server-renders the ZenduONE Academy curriculum", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>ZenCam Academy<\/title>/i);
+  assert.match(html, /<title>ZenduONE Academy<\/title>/i);
   assert.match(html, /Build confidence/);
-  assert.match(html, /Welcome to ZenCam Academy by Traxxis GPS/);
+  assert.match(html, /Welcome to ZenduONE Academy by Traxxis GPS/);
   assert.match(html, /Choose a helpful starting point/);
   assert.doesNotMatch(html, /Start with a popular task/);
   assert.match(html, /Traxxis customer support/);
   assert.match(html, /View vehicle trips/);
   assert.match(html, /Request video from a trip/);
-  assert.match(html, /Expanding across ZenCam/);
+  assert.match(html, /Expanding across ZenduONE/);
   assert.doesNotMatch(html, /<h3>Work<\/h3>/);
 });
 
@@ -150,7 +150,7 @@ test("renders every customer lesson with clear guided controls", async () => {
 test("keeps every lesson screenshot available and completion navigation wired", async () => {
   const workflows = await readFile(new URL("../components/screenshot-workflow-demo.tsx", import.meta.url), "utf8");
   const imagePaths = [...workflows.matchAll(/image: "([^"]+)"/g)].map((match) => match[1]);
-  assert.ok(imagePaths.length >= 40, "the curriculum should retain its captured ZenCam screens");
+  assert.ok(imagePaths.length >= 40, "the curriculum should retain its captured ZenduONE screens");
 
   for (const imagePath of new Set(imagePaths)) {
     await access(new URL(`../public${imagePath}`, import.meta.url));

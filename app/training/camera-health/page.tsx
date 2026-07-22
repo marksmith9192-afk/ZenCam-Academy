@@ -5,7 +5,7 @@ const healthChecks = [
   { number: "01", title: "Confirm the vehicle was in use", body: "Check whether the vehicle was driven and the ignition was on. A parked vehicle may correctly appear offline or inactive." },
   { number: "02", title: "Look for power at the camera", body: "With the ignition on, check whether the camera starts and its indicator lights appear. No lights usually points to a power or connection issue." },
   { number: "03", title: "Note the indicator lights", body: "Power, network, GPS, and recording indicators vary by camera model. Record which lights are on, off, or flashing instead of guessing from color alone." },
-  { number: "04", title: "Check ZenCam before touching hardware", body: "Review the unit’s last activity, online status, and recording health. A powered camera that is not reporting may be in a low-signal area or need support." },
+  { number: "04", title: "Check ZenduONE before touching hardware", body: "Review the unit’s last activity, online status, and recording health in ZenduONE. A powered camera that is not reporting may be in a low-signal area or need support." },
 ];
 
 export default function CameraHealthPage() {
