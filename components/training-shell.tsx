@@ -32,7 +32,7 @@ export function TrainingShell({ children, activeSection, activeResource }: { chi
             <em>{section.lessons.filter((lesson) => lesson.status === "available").length}</em>
           </Link>
         ))}
-        <div className="training-nav-note"><strong>Practice safely</strong><span>Lessons use real product screens and never change your fleet data.</span></div>
+        <div className="training-nav-note"><strong>Practice safely</strong><span>Lessons use real <span className="no-break">product screens</span> and never change your fleet data.</span></div>
       </aside>
       <main className="training-main">{children}</main>
     </div>

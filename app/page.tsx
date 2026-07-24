@@ -21,7 +21,7 @@ export default function TrainingHome() {
         <span className="academy-kicker">Welcome to ZenduONE Academy by Traxxis GPS</span>
         <h1>Build confidence.<span>Drive better outcomes.</span></h1>
         <strong className="academy-subhead">Practical training for every part of your fleet operation.</strong>
-        <p>Learn essential ZenduONE workflows through clear, self-paced lessons using real platform screens.</p>
+        <p>Learn essential ZenduONE workflows through clear, self-paced lessons using real <span className="no-break">platform screens.</span></p>
       </div>
       <div className="academy-benefits" aria-label="Training benefits">
         <div><strong>Self-paced</strong><span>Learn on your schedule</span></div>

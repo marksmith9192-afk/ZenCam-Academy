@@ -2,6 +2,7 @@
 
 :root { --navy:#0d1e35; --blue:#1677c8; --ink:#122033; --muted:#617087; --line:#dfe6ef; --soft:#f5f8fb; --green:#11a461; }
 * { box-sizing:border-box; }
+.no-break { white-space:nowrap; }
 html { background:#f5f7fa; }
 body { margin:0; color:var(--ink); background:radial-gradient(circle at 50% 0,#fff 0,#f7f9fc 52%,#eef3f7 100%); font-family:Arial,Helvetica,sans-serif; }
 button { font:inherit; }
