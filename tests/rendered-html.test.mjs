@@ -12,18 +12,30 @@ const lessonRoutes = [
   "/training/maps/request-trip-video",
   "/training/maps/assign-trip-driver",
   "/training/maps/contact-driver",
+  "/training/maps/live-map-filters",
+  "/training/maps/review-stops-idling",
+  "/training/maps/monitor-camera-status",
   "/training/safety/coach-driver",
   "/training/safety/review-scorecards",
   "/training/safety/manage-event-status",
   "/training/safety/configure-rules",
+  "/training/safety/complete-coaching-record",
+  "/training/safety/update-exception-status",
+  "/training/safety/tag-exception",
   "/training/reports/schedule-report",
   "/training/reports/run-report",
   "/training/reports/saved-views",
   "/training/reports/export-distribute",
+  "/training/reports/download-report",
+  "/training/reports/share-report",
+  "/training/reports/create-report",
   "/training/admin/users-permissions",
   "/training/admin/groups-assets",
   "/training/admin/manage-drivers",
   "/training/admin/notifications",
+  "/training/admin/create-group",
+  "/training/admin/organization-settings",
+  "/training/admin/audit-log",
 ];
 
 async function render(pathname = "/") {
@@ -78,11 +90,18 @@ test("keeps real-screen workflows and Pages publishing configured", async () => 
   assert.match(catalog, /demo: "manage-assets"/);
   assert.match(catalog, /demo: "map-manage-drivers"/);
   assert.match(catalog, /demo: "manage-locations"/);
+  assert.doesNotMatch(catalog, /status: "planned"/);
+  assert.match(catalog, /demo: "complete-coaching-record"/);
+  assert.match(catalog, /demo: "create-report"/);
+  assert.match(catalog, /demo: "audit-log"/);
 
   assert.match(workflows, /05-trip-hover-camera\.png/);
   assert.match(workflows, /03-nearby-assets\.png/);
   assert.match(workflows, /06-request-submitted\.png/);
   assert.match(workflows, /Video request submitted/);
+  assert.match(workflows, /Mark as Coached/);
+  assert.match(workflows, /Open the completed download/);
+  assert.match(workflows, /Save the group and return to the hierarchy/);
   assert.match(
     workflows,
     /title: "Open exceptions for the trip"[\s\S]*?hotspot: \{ x: 8\.5, y: 54, width: 32, height: 7 \}/,
